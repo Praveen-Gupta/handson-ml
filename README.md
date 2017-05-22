@@ -18,7 +18,7 @@ First, you will need to install [git](https://git-scm.com/), if you don't have i
 
 Next, clone this repository by opening a terminal and typing the following commands:
 
-    $ cd $HOME  # or any other development directory you prefer
+    $ cd $HOME  # or any other development directory you prefer to use
     $ git clone https://github.com/Praveen-Gupta/handson-ml.git
     $ cd handson-ml
 
