@@ -5,6 +5,7 @@ import os
 import tarfile
 import urllib
 import pandas as pd
+import numpy as np
 
 DOWNLOAD_ROOT = "https://raw.githubusercontent.com/ageron/handson-ml/master/"
 HOUSING_PATH = "datasets/housing"
@@ -44,3 +45,15 @@ def load_housing_data(housing_path = HOUSING_PATH):
     return pd.read_csv(csv_path)
 
 #*******************************************************************************
+# Split Data to Train_Set and Test_Set
+#*******************************************************************************
+
+def split_train_set(data, test_ratio):
+    shuffled_indices = np.random.permutation(len(data))
+    test_set_size = int (len(data) * test_ratio)
+
+    test_indices = shuffled_indices[0:test_set_size]
+    train_indices = shuffled_indices[test_set_size:]
+
+    return data.iloc[train_indices], data.iloc[test_indices]
+    
